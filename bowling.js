@@ -16,13 +16,19 @@ function roll(pins){
 function score(){
     var finalScore = 0;
     for(var frame of frames){
-        for(var score of frame){
-            finalScore += score;
-        }
+        var scoreForFrame = scoreForFrame(frame);
+        finalScore += scoreForFrame;
     }
     return finalScore;
 }
 
+function scoreForFrame(frame){
+    var frameScore = 0;
+    for(var roll of frame){
+        frameScore += roll;
+    }
+    return frameScore;
+}
 
 function startNewGame(){
     frames = [[]];
